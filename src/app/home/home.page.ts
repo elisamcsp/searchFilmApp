@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FilmsService } from '../services/films.service'; 
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
 
@@ -18,7 +17,7 @@ export class HomePage implements OnInit{
   ngOnInit() { }
 
   searchMovie(){
-    this.navController.navigateForward(["/films",this.title]);
+    this.navController.navigateForward(["/search/films",this.title]);
   }
 
 }

@@ -11,9 +11,9 @@
 <ion-content>
     <div id="container">
         <ion-list *ngIf="results">
-            <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/films/detail',item.imdbID]">
+            <ion-item button *ngFor="let item of (results | async)" [routerLink]="['detail',item.imdbID]">
                 <ion-avatar slot="start">
-                    <img [src]="item.Poster" />
+                    <img [src]="item.Poster" *ngIf="item.Poster != 'N/A' && item.Poster" />
                 </ion-avatar>
                 <ion-label>
                     <h2>{{ item.Title }}</h2>

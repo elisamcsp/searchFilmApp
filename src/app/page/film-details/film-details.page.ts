@@ -16,12 +16,7 @@ export class FilmDetailsPage implements OnInit {
 
   ngOnInit() {
     this.imdbID = this.activateRouter.snapshot.paramMap.get("id");
-    this.filmService.getDetail(this.imdbID).subscribe(results => { this.film = results});
-    
-  }
-
-  openWebsite() {
-    window.open(this.film.Website, '_blank');
+    this.filmService.getDetail(this.imdbID).subscribe(results => { this.film = results});    
   }
 
 }

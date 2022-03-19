@@ -5,8 +5,11 @@ import { HomePage } from './home.page';
 const routes: Routes = [
   {
     path: '',
-    component: HomePage,
-  }
+    component: HomePage,    
+  },{
+    path: 'films/:title',
+    loadChildren: () => import('../page/films/films.module').then( m => m.FilmsPageModule)
+  },
 ];
 
 @NgModule({
