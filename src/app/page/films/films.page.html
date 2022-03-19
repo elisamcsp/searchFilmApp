@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+
+        <ion-title>Films</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div id="container">
+        <ion-list *ngIf="results">
+            <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/films/detail',item.imdbID]">
+                <ion-avatar slot="start">
+                    <img [src]="item.Poster" />
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{ item.Title }}</h2>
+                    <h3>{{ item.Year }}</h3>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>
