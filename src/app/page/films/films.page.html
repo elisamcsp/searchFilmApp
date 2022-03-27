@@ -10,10 +10,10 @@
 
 <ion-content>
     <div id="container">
-        <ion-list *ngIf="results">
-            <ion-item button *ngFor="let item of (results | async)" [routerLink]="['detail',item.imdbID]">
+        <ion-list *ngIf="results; else conditionNoResults">
+            <ion-item button *ngFor="let item of (results)" [routerLink]="['detail',item.imdbID]">
                 <ion-avatar slot="start">
-                    <img [src]="item.Poster" *ngIf="item.Poster != 'N/A' && item.Poster" />
+                    <img [src]="item.Poster" *ngIf="item.Poster != 'N/A'" />
                 </ion-avatar>
                 <ion-label>
                     <h2>{{ item.Title }}</h2>
@@ -21,5 +21,10 @@
                 </ion-label>
             </ion-item>
         </ion-list>
+        <ng-template #conditionNoResults>
+            <ion-text color="primary">
+                <h2>No movies found</h2>
+            </ion-text>
+        </ng-template>
     </div>
 </ion-content>

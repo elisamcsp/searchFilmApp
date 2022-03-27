@@ -10,7 +10,7 @@
 <ion-content padding>
 
     <ion-card *ngIf="film">
-        <img [src]="film.Poster" *ngIf="film.Poster != 'N/A' && film.Poster" />
+        <img [src]="film.Poster" *ngIf="film.Poster != 'N/A'" />
         <ion-card-header>
             <ion-card-title>{{ film.Title }}</ion-card-title>
             <ion-card-subtitle>{{ film.Year }}</ion-card-subtitle>

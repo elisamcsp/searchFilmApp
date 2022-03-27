@@ -10,13 +10,13 @@ import { FilmsService } from '../../services/films.service';
 })
 export class FilmsPage implements OnInit {
   args = "";  
-  results: Observable<any>;
+  results: any;
 
   constructor(private fimlsSevices: FilmsService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.args = this.activateRoute.snapshot.paramMap.get("title");
-    this.results = this.fimlsSevices.searchMovie(this.args);
+    this.fimlsSevices.searchMovie(this.args).subscribe(async results => { this.results = results } );    
   }
 
 }

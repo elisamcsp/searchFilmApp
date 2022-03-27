@@ -16,8 +16,9 @@ export class HomePage implements OnInit{
 
   ngOnInit() { }
 
-  searchMovie(){
+  searchMovie(){    
     this.navController.navigateForward(["/search/films",this.title]);
+    this.title = "";
   }
 
 }
